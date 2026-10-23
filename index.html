@@ -4,161 +4,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bavadharani | My Portfolio</title>
+    <title>Bavadharani | Portfolio</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
+            background: #0b1020;
+            color: #ffffff;
             line-height: 1.6;
         }
 
         header {
+            background: #11182d;
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 8%;
-            background: #111827;
+            flex-wrap: wrap;
+            gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
-        .logo {
+        header h2 {
             color: #c4b5fd;
-            font-size: 24px;
-            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            font-weight: bold;
         }
 
         nav a:hover {
             color: #c4b5fd;
         }
 
-        .hero {
-            min-height: 75vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(36px, 6vw, 60px);
-            margin: 10px 0;
-        }
-
-        .hero h1 span {
-            color: #c4b5fd;
-        }
-
-        .hero p {
-            color: #cbd5e1;
-            max-width: 550px;
-            margin: 12px 0 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #8b5cf6;
-            color: white;
-            padding: 12px 22px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin: 5px;
-        }
-
         section {
-            padding: 65px 8%;
+            padding: 70px 8%;
         }
 
-        h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 25px;
+        .home {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .home-text {
+            flex: 1;
+        }
+
+        .home-text h1 {
+            font-size: clamp(34px, 5vw, 52px);
+            margin-bottom: 12px;
+        }
+
+        .home-text h1 span {
             color: #c4b5fd;
         }
 
-        .about {
-            text-align: center;
-            max-width: 750px;
-            margin: auto;
-            color: #cbd5e1;
-        }
-
-        .skills {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .skill {
-            background: #1e293b;
-            border: 1px solid #475569;
-            padding: 12px 20px;
-            border-radius: 10px;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 14px;
-            padding: 25px;
-            transition: transform 0.2s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .project-card p {
-            color: #cbd5e1;
+        .home-text h3 {
+            color: #c4b5fd;
             margin-bottom: 15px;
         }
 
-        .project-card a {
+        .home-text p {
+            color: #d1d5db;
+            margin-bottom: 25px;
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 5px solid #a78bfa;
+            box-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
+            flex-shrink: 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 22px;
+            background: #8b5cf6;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #7c3aed;
+        }
+
+        h2.section-title {
+            font-size: 32px;
+            color: #c4b5fd;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            color: #d1d5db;
+        }
+
+        .skills-container,
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            background: #151e35;
+            padding: 25px;
+            border: 1px solid #293553;
+            border-radius: 15px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #a78bfa;
+        }
+
+        .card h3 {
+            color: #c4b5fd;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #d1d5db;
+            margin-bottom: 18px;
+        }
+
+        .project-link {
             color: #c4b5fd;
             text-decoration: none;
             font-weight: bold;
         }
 
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
             padding: 25px;
-            background: #111827;
-            color: #cbd5e1;
+            background: #11182d;
+            color: #d1d5db;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
             header {
-                flex-direction: column;
-                gap: 12px;
+                justify-content: center;
+                text-align: center;
             }
 
-            nav a {
-                margin: 0 7px;
+            nav {
+                justify-content: center;
+            }
+
+            .home-content {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .profile-photo {
+                width: 200px;
+                height: 200px;
+            }
+
+            section {
+                padding: 50px 6%;
             }
         }
     </style>
@@ -167,7 +216,7 @@
 <body>
 
     <header>
-        <div class="logo">Bava.dev</div>
+        <h2>Bavadharani</h2>
 
         <nav>
             <a href="#home">Home</a>
@@ -177,80 +226,125 @@
         </nav>
     </header>
 
-    <section class="hero" id="home">
-        <p>HELLO, I'M</p>
+    <section class="home" id="home">
+        <div class="home-content">
 
-        <h1>Bavadharani <span>👋</span></h1>
+            <div class="home-text">
+                <h3>Hello, welcome to my portfolio!</h3>
 
-        <h3>Aspiring IT Developer</h3>
+                <h1>I'm <span>Bavadharani</span></h1>
 
-        <p>
-            I'm a B.Sc. Information Technology student
-            passionate about coding, web development
-            and learning new technologies.
-        </p>
+                <h3>B.Sc. Information Technology Student</h3>
 
-        <a href="#projects" class="btn">View My Projects</a>
-        <a href="https://github.com/" class="btn">GitHub Profile</a>
+                <p>
+                    I am passionate about learning programming,
+                    web development and creating useful projects.
+                    I am continuously improving my technical skills.
+                </p>
+
+                <a href="#about" class="button">Know More About Me</a>
+            </div>
+
+            <img
+                src="profile.jpeg"
+                alt="Bavadharani's profile photo"
+                class="profile-photo"
+            >
+
+        </div>
     </section>
 
     <section id="about">
-        <h2>About Me</h2>
+        <h2 class="section-title">About Me</h2>
 
-        <p class="about">
-            Hi! I'm Bavadharani, an Information Technology
-            student interested in Python programming,
-            web development and building creative projects.
-            I'm continuously learning and improving my skills.
+        <p class="about-text">
+            I am a B.Sc. Information Technology student at
+            KG College of Arts and Science. I am interested in
+            Python programming, HTML, CSS and web development.
+            My goal is to develop my technical knowledge,
+            build practical projects and prepare for a successful
+            career in the IT industry.
         </p>
     </section>
 
     <section id="skills">
-        <h2>My Skills</h2>
+        <h2 class="section-title">My Skills</h2>
 
-        <div class="skills">
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">Python</div>
-            <div class="skill">JavaScript - Learning</div>
-            <div class="skill">GitHub</div>
+        <div class="skills-container">
+
+            <div class="card">
+                <h3>Python</h3>
+                <p>Learning programming fundamentals and building
+                beginner-friendly Python projects.</p>
+            </div>
+
+            <div class="card">
+                <h3>HTML</h3>
+                <p>Creating web pages using HTML elements and
+                page structure.</p>
+            </div>
+
+            <div class="card">
+                <h3>CSS</h3>
+                <p>Learning to style web pages with colours,
+                layouts and responsive designs.</p>
+            </div>
+
         </div>
     </section>
 
     <section id="projects">
-        <h2>My Projects</h2>
+        <h2 class="section-title">My Projects</h2>
 
-        <div class="projects">
+        <div class="projects-container">
 
-            <div class="project-card">
-                <h3>🌐 Portfolio Website</h3>
-                <p>My personal portfolio built using HTML and CSS.</p>
-                <a href="https://github.com/bavadharaniviji04-cpu/my-portfolio" target="_blank" rel="noopener noreferrer">
-                    View Source Code ↗
-                </a>
+            <div class="card">
+                <h3>Portfolio Website</h3>
+                <p>
+                    My personal portfolio website showcasing
+                    my introduction, skills and projects.
+                </p>
+                <a
+                    href="https://github.com/bavadharaniviji04-cpu/my-portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >View Project →</a>
             </div>
 
-            <div class="project-card">
-                <h3>🐍 Python Mini Project</h3>
-                <p>A space for my Python programming projects.</p>
-                <a href="https://github.com/bavadharaniviji04-cpu/python-mini-project" target="_blank" rel="noopener noreferrer">
-                    View Source Code ↗
-                </a>
+            <div class="card">
+                <h3>Python Mini Project</h3>
+                <p>
+                    A Python calculator that performs addition,
+                    subtraction, multiplication and division.
+                </p>
+                <a
+                    href="https://github.com/bavadharaniviji04-cpu/python-mini-project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >View Project →</a>
             </div>
 
-            <div class="project-card">
-                <h3>💻 Web Development</h3>
-                <p>My upcoming HTML, CSS and JavaScript projects.</p>
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-                    View Source Code ↗
-                </a>
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>
+                    More web development projects will be added
+                    as I continue learning.
+                </p>
+                <a
+                    href="https://github.com/bavadharaniviji04-cpu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >Visit My GitHub →</a>
             </div>
 
         </div>
     </section>
 
     <footer>
-        <p>Made with 💜 by Bavadharani</p>
+        <p>© 2026 Bavadharani | My Personal Portfolio</p>
     </footer>
 
 </body>
